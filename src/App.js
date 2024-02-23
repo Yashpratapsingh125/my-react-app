@@ -77,7 +77,7 @@ const App = () => {
     <div>
       <h1>Data Management App</h1>
       <div>
-        <textarea value={content} onChange={handleContentChange}/>
+        <textarea placeholder='Enter text here' value={content} onChange={handleContentChange}/>
         <span hidden={!contentError}>Content is required</span>
         <br></br>
 
