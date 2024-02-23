@@ -37,7 +37,7 @@ const DisplayDataComponent = ({ data, setUpdating, key }) => {
       content: newContent
     }
 
-    const url = `http://localhost:8080/api/update/${id}`
+    const url = `https://nodejs-projects-1.onrender.com/api/update/${id}`
 
     console.log(url)
 
@@ -62,8 +62,19 @@ const DisplayDataComponent = ({ data, setUpdating, key }) => {
           <span hidden={showInput === item.id ? true : false}>{item.content}</span>
           <input hidden={showInput === item.id ? false : true} value={content} onChange={(e) => setNewContent(e)} />
           <span>
-            <button onClick={() => showHideInput(showInput === -1 ? item.id : -1, item.content)} key={item.id} hidden={shownButton === item.id ? false : true}>Edit</button>
-            <button hidden={showInput === item.id ? false : true} onClick={() => updateContent(item.id)}>Update</button>
+            <button onClick={() => showHideInput(showInput === -1 ? item.id : -1, item.content)} key={item.id} hidden={shownButton === item.id ? false : true} style={{
+              width: '60px', // Adjust the width as needed
+              height: '20px', // Adjust the height as needed
+              fontSize: '12px', // Adjust the font size as needed
+              padding: '3px 8px', // Adjust the padding to add text margin
+            }}>Edit</button>
+            <button hidden={showInput === item.id ? false : true} onClick={() => updateContent(item.id)}
+              style={{
+                width: '60px', // Adjust the width as needed
+                height: '20px', // Adjust the height as needed
+                fontSize: '12px', // Adjust the font size as needed
+                padding: '3px 8px', // Adjust the padding to add text margin
+              }}>Update</button>
           </span>
         </div>
       ))}

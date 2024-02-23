@@ -5,7 +5,7 @@ import axios from 'axios';
 const App = () => {
   const containerStyle = {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   };
 
   // CODE 
@@ -13,7 +13,7 @@ const App = () => {
   const [column, setColumn] = useState(1)
   const [contentError, setContentError] = useState(false)
   const [updating, setUpdating] = useState(false)
-  const [ data, setData] = useState([])
+  const [data, setData] = useState([])
 
   const setWindow = (e) => {
     setColumn(e.target.value)
@@ -45,7 +45,7 @@ const App = () => {
 
     setContent("")
 
-    const url = 'http://localhost:8080/api/add'
+    const url = 'https://nodejs-projects-1.onrender.com/api/add'
 
     const config = {
       headers: {
@@ -58,7 +58,7 @@ const App = () => {
 
   //Function to fetch data
   const fetchData = () => {
-    axios.get("http://localhost:8080/api/")
+    axios.get("https://nodejs-projects-1.onrender.com/api/")
       .then(({ data }) => {
         console.log(data)
         setData(data);
@@ -77,7 +77,7 @@ const App = () => {
     <div>
       <h1>Data Management App</h1>
       <div>
-        <textarea value={content} onChange={handleContentChange} />
+        <textarea value={content} onChange={handleContentChange}/>
         <span hidden={!contentError}>Content is required</span>
         <br></br>
 
@@ -91,7 +91,7 @@ const App = () => {
       </div>
 
       <div style={containerStyle}>
-        {data?.result?.map((col, i) => <DisplayDataComponent setUpdating={setUpdating} data={col} key={i}/>)}
+        {data?.result?.map((col, i) => <DisplayDataComponent setUpdating={setUpdating} data={col} key={i} />)}
       </div>
     </div>
   );

@@ -11,7 +11,32 @@
   margin: 10px;
   resize: both;
   overflow: auto;
+  min-width: 20vw; /* Minimum width of 20% of the viewport width */
+  min-height: 20vh; /* Minimum height of 20% of the viewport height */
+  max-width: 50vw; /* Maximum width of 60% of the viewport width */
+  max-height: 50vh; /* Maximum height of 60% of the viewport height */
+  flex:auto;
 }
+
+@media screen and (max-width: 768px) {
+  .resizable-component {
+    min-width: calc(50vw - 20px); /* Adjusted for the margin */
+    min-height: calc(30vh - 20px); /* Adjusted for the margin */
+    max-width: calc(90vw - 20px); /* Adjusted for the margin */
+    max-height: calc(90vh - 20px); /* Adjusted for the margin */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .resizable-component {
+    min-width: calc(25vw - 20px); /* Adjusted for the margin */
+    min-height: calc(25vh - 20px); /* Adjusted for the margin */
+    max-width: calc(70vw - 20px); /* Adjusted for the margin */
+    max-height: calc(70vh - 20px); /* Adjusted for the margin */
+  }
+}
+
+
 
 textarea {
   width: 100%;
